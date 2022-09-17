@@ -1,0 +1,50 @@
+version: 2.1
+
+jobs:
+  build:
+  deploy:
+      docker:
+      - image: backend_web
+        auth:
+          username: alotropo
+          password: d23m03a1998  # context / project UI env-var reference
+      steps:
+      - checkout
+      - run:
+          name: Deploy Main to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      - run:
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install docker-compose
+            pip install -r requirements.txt
+            
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          paths:
+            - "venv"
+
+        
+      - run:
+          name: Running tests
+          command: |
+            . venv/bin/activate
+            python -m pytest
+      - store_artifacts:
+          path: test-reports/
+          destination: python_app
+
+
+orbs:
+  heroku: circleci/heroku@0.0.10
+workflows:
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git
+      
+      
+    
