@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "api",
+    "rest_framework",
+    "exercises",
 ]
 
 MIDDLEWARE = [
@@ -74,15 +77,24 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': {},
+    
+    'box-fixed': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "postgres",
+        'NAME': "mrplato",
         'USER': "postgres",
         'PASSWORD':"postgres",
-        #'HOST':"db",
         'HOST':"db",
-        'PORT':5432
+        # 'PORT':5432
+    },
 
+    'box-flexible': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "mrplatoflexible",
+        'USER': "postgres",
+        'PASSWORD':"postgres",
+        'HOST':"db",
+        # 'PORT':5432
     }
 }
 

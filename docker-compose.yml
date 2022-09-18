@@ -10,6 +10,18 @@ services:
       - POSTGRES_DB=mrplato
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5060:5432
+
+  db-test:
+    container_name: dois
+    image: postgres
+    environment: 
+      - POSTGRES_DB=mrplatoflexible
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
 
   pgadmin:
     container_name: pgadmin4_container
