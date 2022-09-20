@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     #commom
     "rest_framework",
     "api",
-    #mrplatofixed
+    #mrplatofixed,
     "exercises",
     "notification",
     "content",
