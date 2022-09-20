@@ -1,23 +1,13 @@
 version: "3.9"
-   
+
 services:
   db:
     container_name: postgres_database
     image: postgres
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - /data/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=mrplato
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    ports:
-      - 5060:5432
-
-  db-test:
-    container_name: dois
-    image: postgres
-    environment: 
-      - POSTGRES_DB=mrplatoflexible
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:

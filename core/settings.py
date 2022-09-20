@@ -37,9 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "api",
+    #commom
     "rest_framework",
+    "api",
+    #mrplatofixed
     "exercises",
+    "notification",
+    "content",
+    #mrplatoflexible
+    "users",
+    "community",
+    "performance",
+    
 ]
 
 MIDDLEWARE = [
@@ -78,17 +87,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {},
-    
-    'box-fixed': {
+    'mrplatofixed': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "mrplato",
+        'NAME': "mrplatofixed",
         'USER': "postgres",
         'PASSWORD':"postgres",
         'HOST':"db",
         # 'PORT':5432
     },
-
-    'box-flexible': {
+    
+    'mrplatoflexible': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "mrplatoflexible",
         'USER': "postgres",
@@ -140,3 +148,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DATABASE_ROUTERS = ['routers.mrplatodb.FlexibleRouter','routers.mrplatodb.FixedRouter']
