@@ -96,7 +96,6 @@ DATABASES = {
         'HOST':"db",
         # 'PORT':5432
     },
-    
     'mrplatoflexible': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "mrplatoflexible",
