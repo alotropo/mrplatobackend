@@ -1,3 +1,4 @@
+from unicodedata import category
 import factory
 from faker import Faker
 
@@ -12,3 +13,12 @@ class QuestionFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = "exercises.Question"
+
+
+class NotificationFactory(factory.django.DjangoModelFactory):
+    title = faker.sentences()
+    text = faker.paragraph()
+
+    class Meta:
+        model = "notification.Notification"
+

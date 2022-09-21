@@ -2,12 +2,11 @@ import pytest
 
 from rest_framework.test import APIClient
 
-from factories import QuestionFactory
+from factories import QuestionFactory,NotificationFactory
 
 from django.test import TestCase
 
 TestCase.databases={"mrplatofixed","mrplatoflexible"}
-
 
 
 @pytest.fixture
@@ -18,3 +17,7 @@ def create_question():
 @pytest.fixture
 def api_client():
     return APIClient
+
+@pytest.fixture
+def create_notification():
+    return NotificationFactory()
