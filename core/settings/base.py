@@ -67,7 +67,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "frontend"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,18 +90,19 @@ DATABASES = {
     'default': {},
     'mrplatofixed': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "mrplatofixed",
-        'USER': "postgres",
-        'PASSWORD':"postgres",
-        'HOST':"db",
+        'NAME': "d4v2i06c2qbh1n",
+        'USER': "oykesrrufxvjnr",
+        'PASSWORD':"b85e260cec3a65069aa2a16cea511772c2625afbbd36db2ebe372f2a1b1ca126",
+        'HOST':"ec2-44-207-133-100.compute-1.amazonaws.com",
         # 'PORT':5432
     },
+    
     'mrplatoflexible': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "mrplatoflexible",
-        'USER': "postgres",
-        'PASSWORD':"postgres",
-        'HOST':"db",
+        'NAME': "d6a3klv5pdnorm",
+        'USER': "fhmkwviotlezwg",
+        'PASSWORD':"82194719fbd4c6adc22ccee8675f28930ec0487c8b6fc30183cd65e99a36d109",
+        'HOST':"ec2-34-200-205-45.compute-1.amazonaws.com",
         # 'PORT':5432
     }
 }
@@ -144,7 +145,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-# STATICFILES_DIRS = [BASE_DIR / "frontend/static"]
+STATICFILES_DIRS = [BASE_DIR / "frontend/static"]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type

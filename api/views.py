@@ -8,6 +8,8 @@ from rest_framework import status
 
 import json
 
+
+
 class ApiTest(APIView):
 	def get(self,request):
 		return Response({"okokokokok"})
