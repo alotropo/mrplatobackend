@@ -22,3 +22,12 @@ class NotificationFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "notification.Notification"
 
+
+
+class ContentFactory(factory.django.DjangoModelFactory):
+    topic = faker.sentences()
+    title = faker.sentences()
+    text = faker.paragraph()
+
+    class Meta:
+        model = "content.Content"

@@ -2,7 +2,7 @@ import pytest
 
 from rest_framework.test import APIClient
 
-from factories import QuestionFactory,NotificationFactory
+from factories import QuestionFactory,NotificationFactory,ContentFactory
 
 from django.test import TestCase
 
@@ -21,3 +21,7 @@ def api_client():
 @pytest.fixture
 def create_notification():
     return NotificationFactory()
+
+@pytest.fixture
+def create_content():
+    return ContentFactory()

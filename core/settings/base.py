@@ -12,8 +12,14 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+
+import environ
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+env = environ.Env()
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
     #commom
     "rest_framework",
     "api",
+    "ckeditor",
     #mrplatofixed,
     "exercises",
     "notification",
@@ -90,19 +97,18 @@ DATABASES = {
     'default': {},
     'mrplatofixed': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "d4v2i06c2qbh1n",
-        'USER': "oykesrrufxvjnr",
-        'PASSWORD':"b85e260cec3a65069aa2a16cea511772c2625afbbd36db2ebe372f2a1b1ca126",
-        'HOST':"ec2-44-207-133-100.compute-1.amazonaws.com",
+        'NAME': "mrplatofixed",
+        'USER': "postgres",
+        'PASSWORD':"postgres",
+        'HOST':"db",
         # 'PORT':5432
     },
-    
     'mrplatoflexible': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "d6a3klv5pdnorm",
-        'USER': "fhmkwviotlezwg",
-        'PASSWORD':"82194719fbd4c6adc22ccee8675f28930ec0487c8b6fc30183cd65e99a36d109",
-        'HOST':"ec2-34-200-205-45.compute-1.amazonaws.com",
+        'NAME': "mrplatoflexible",
+        'USER': "postgres",
+        'PASSWORD':"postgres",
+        'HOST':"db",
         # 'PORT':5432
     }
 }
@@ -127,6 +133,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = env("EMAIL_HOST_USER") 
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD") 
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
