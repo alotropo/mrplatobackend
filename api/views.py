@@ -1,3 +1,4 @@
+from urllib import response
 from django.shortcuts import render
 from api.serializers import ContentSerializer,NotificationSerializer
 from content.models import Content
@@ -11,6 +12,10 @@ from notification.models import Notification
 import json
 from django.core.mail import send_mail
 from django.conf import settings
+from rest_framework.viewsets import ModelViewSet
+
+from rest_framework.response import Response
+from rest_framework import status
 
 class ApiTest(APIView):
 	def get(self,request):
@@ -26,12 +31,22 @@ def api_test(request):
 
 
 
-class ApiContent(ListAPIView):
+class ApiContent(ModelViewSet):
 	queryset = Content.objects.using("mrplatofixed").all()
 	serializer_class = ContentSerializer
 
+	def create(self, request, *args, **kwargs):
+		return Response("Unauthorized",status=status.HTTP_401_UNAUTHORIZED)
+
+	def destroy(self, request, *args, **kwargs):
+		return Response("Unauthorized",status=status.HTTP_401_UNAUTHORIZED)
+
+	def update(self, request, *args, **kwargs):
+		return Response("Unauthorized",status=status.HTTP_401_UNAUTHORIZED)
 
 
 class ApiNotification(ListAPIView):
 	queryset = Notification.objects.using("mrplatofixed").all()
 	serializer_class = NotificationSerializer
+
+

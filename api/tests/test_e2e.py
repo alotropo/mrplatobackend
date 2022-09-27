@@ -11,14 +11,6 @@ class TestEndPoint:
         response = api_client().get(self.endpoint)
         assert response.status_code == 200
 
-    #This is not test e2e, but model test.
-    
-    # def test_create(self,api_client,create_question):
-    #     print("teste",create_question)
-
-    #     assert [create_question.text] == get_question()
-
-
     def test_create(self, api_client,create_question):
         
         expected_json = {
