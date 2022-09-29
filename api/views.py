@@ -16,7 +16,8 @@ from rest_framework.viewsets import ModelViewSet
 
 from rest_framework.response import Response
 from rest_framework import status
-
+from exercises.serializers import ListExerciseSerializer
+from exercises.models import ListExercise
 class ApiTest(APIView):
 	def get(self,request):
 		return Response({"okokokokok"})
@@ -50,3 +51,8 @@ class ApiNotification(ListAPIView):
 	serializer_class = NotificationSerializer
 
 
+
+
+class ListExerciseView(ModelViewSet):
+	queryset = ListExercise.objects.using("mrplatofixed").all()
+	serializer_class = ListExerciseSerializer
