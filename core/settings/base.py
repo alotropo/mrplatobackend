@@ -147,11 +147,15 @@ USE_I18N = True
 USE_TZ = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = env("EMAIL_HOST")
+# EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_HOST="smtp.gmail.com"
+
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = env("EMAIL_HOST_USER") 
-EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD") 
+# EMAIL_HOST_USER = env("EMAIL_HOST_USER") 
+EMAIL_HOST_USER="mrplatoplatform@gmail.com"
+EMAIL_HOST_PASSWORD="pahvnqwthqvckxsq"
+# EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD") 
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
