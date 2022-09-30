@@ -103,19 +103,19 @@ DATABASES = {
     'default': {},
     'mrplatofixed': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "de1j13304qe1cb",
-        'USER': "jwpmqjkrnzilpl",
-        'PASSWORD':"8e9d982b21010cc02d56051f87e67498d864e531b5904bd6e71e909a9a7f0d5f",
-        'HOST':"ec2-44-209-57-4.compute-1.amazonaws.com",
+        'NAME': "d68muufg4lfqj5",
+        'USER': "vhzqiumgsnfsmh",
+        'PASSWORD':"57430e96d397b2aa78d7691cb83ecbf638c74b6513e2f2f5fd5594684affd53b",
+        'HOST':"ec2-52-70-45-163.compute-1.amazonaws.com",
         # 'PORT':5432
     },
     
     'mrplatoflexible': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "d4v2i06c2qbh1n",
-        'USER': "oykesrrufxvjnr",
-        'PASSWORD':"b85e260cec3a65069aa2a16cea511772c2625afbbd36db2ebe372f2a1b1ca126",
-        'HOST':"ec2-44-207-133-100.compute-1.amazonaws.com",
+        'NAME': "daupbf0ppqcea0",
+        'USER': "iielyrztqlszht",
+        'PASSWORD':"27baa9c5570faf0d5b5d9352afff8b8912e0468321127fc6bade5e9b6f778814",
+        'HOST':"ec2-52-70-45-163.compute-1.amazonaws.com",
         # 'PORT':5432s
     }
 }
