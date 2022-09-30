@@ -9,20 +9,6 @@ DIFF_CHOICES = (
     ('torneio', 'torneio'),
 )
 
-
-
-class Question(models.Model):
-    category = models.CharField(max_length=50)
-    text = models.TextField()
-    result = models.TextField()
-    data_created = models.DateField(auto_now=True)
-    resolution = models.TextField()
-
-
-    def __str__(self) -> str:
-        return self.result
-
-
 class ListExercise(models.Model):
     list_name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
@@ -35,3 +21,19 @@ class ListExercise(models.Model):
 
     class Meta:
         ordering = ('-availability', )
+
+
+
+class Question(models.Model):
+    list = models.ForeignKey(ListExercise, on_delete=models.CASCADE)
+    category = models.CharField(max_length=50)
+    text = models.TextField()
+    result = models.TextField()
+    data_created = models.DateField(auto_now=True)
+    resolution = models.TextField()
+
+
+    def __str__(self) -> str:
+        return self.result
+
+

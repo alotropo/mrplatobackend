@@ -1,13 +1,45 @@
 {
   "files": {
-    "main.css": "/static/css/main.cc9583b1.css",
-    "main.js": "/static/js/main.25ea8f5b.js",
+    "main.css": "/static/css/main.9765e5cb.css",
+    "main.js": "/static/js/main.4bc7a8c9.js",
+    "static/media/Nunito-VariableFont_wght.ttf": "/static/media/Nunito-VariableFont_wght.e832734fe3e30d1edb43.ttf",
+    "static/media/game.wav": "/static/media/game.633693b8a69e9e94fe48.wav",
+    "static/media/comunidade.svg": "/static/media/comunidade.62647aee672f51af8f8c60895d345ab5.svg",
+    "static/media/istockphoto-1369249687-612x612.jpg": "/static/media/istockphoto-1369249687-612x612.13531598904cfe58ea66.jpg",
+    "static/media/desafio.svg": "/static/media/desafio.36f5020eb4ad6d0ab8453f807ad80646.svg",
+    "static/media/exercicio.svg": "/static/media/exercicio.49da1033270e8f47e6889e2304c0dcbf.svg",
+    "static/media/templatehome.svg": "/static/media/templatehome.abad5405851127fba9cd.svg",
+    "static/media/content.svg": "/static/media/content.d0dbd245962152ab739ec40dc509a96f.svg",
+    "static/media/conteudo.svg": "/static/media/conteudo.80e8dae0254e93c0f5944722f5cb527b.svg",
+    "static/media/torneio.svg": "/static/media/torneio.54943bf40385e48d76c0039b957f0e80.svg",
+    "static/media/dine.svg": "/static/media/dine.bcbe503cd350727a48be.svg",
+    "static/media/games.svg": "/static/media/games.d633ddf171f023b27fdcbb4dad4d4a7c.svg",
+    "static/media/JerseyM54-aLX9.ttf": "/static/media/JerseyM54-aLX9.b9b9f8b7b36075c930f8.ttf",
+    "static/media/trofeu.svg": "/static/media/trofeu.85c7bdb48e56dacdfed36e9457c77e82.svg",
+    "static/media/logo.svg": "/static/media/logo.2f741180c89c642e6285d4308856d256.svg",
+    "static/media/logosimplific.svg": "/static/media/logosimplific.695ae35104666eadc032fb89731a2cfe.svg",
+    "static/media/settings.svg": "/static/media/settings.e8b3581af99df1346f2f54aba9fa64ad.svg",
+    "static/media/exit.svg": "/static/media/exit.a4aa1bd279b8970a6bc94639fd9b5098.svg",
+    "static/media/easy.svg": "/static/media/easy.ecec34194c89c49ea0cc0c21eac8c50c.svg",
+    "static/media/hard.svg": "/static/media/hard.0b74141247a863001f8d28859d627fc1.svg",
+    "static/media/medium.svg": "/static/media/medium.2157e236ad35d8bc415ae43a33cb2f11.svg",
+    "static/media/list.svg": "/static/media/list.6726d9b3a4ff25256c2add44080d9161.svg",
+    "static/media/about.svg": "/static/media/about.ce03bbeae1176d73cb16e832e115d531.svg",
+    "static/media/lock.svg": "/static/media/lock.957d9cbfb3fd3239357f6f5ca94dc672.svg",
+    "static/media/performance.svg": "/static/media/performance.8048f9c7c52619cb90fa8a94eee1fe67.svg",
+    "static/media/notification.svg": "/static/media/notification.92b239a5f4e844584f501e6facfbb296.svg",
+    "static/media/menuopen.svg": "/static/media/menuopen.3ae3f41a764729c075135ca97592cfa3.svg",
     "index.html": "/index.html",
-    "main.cc9583b1.css.map": "/static/css/main.cc9583b1.css.map",
-    "main.25ea8f5b.js.map": "/static/js/main.25ea8f5b.js.map"
+    "static/media/write.svg": "/static/media/write.1aea4e478533a191539390c083bbb1c6.svg",
+    "static/media/menu.svg": "/static/media/menu.696ec14487682ad30dd0bfe70650496e.svg",
+    "static/media/checkedtrue.svg": "/static/media/checkedtrue.b57f1f70c9211ef8955a3cf8c7ea22fb.svg",
+    "static/media/checked.svg": "/static/media/checked.83870144e9dc81e060225ef1e36e87e9.svg",
+    "static/media/profile.svg": "/static/media/profile.80d25337018d8cd4d7a652ea845ec041.svg",
+    "main.9765e5cb.css.map": "/static/css/main.9765e5cb.css.map",
+    "main.4bc7a8c9.js.map": "/static/js/main.4bc7a8c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc9583b1.css",
-    "static/js/main.25ea8f5b.js"
+    "static/css/main.9765e5cb.css",
+    "static/js/main.4bc7a8c9.js"
   ]
 }
