@@ -14,9 +14,12 @@ from pathlib import Path
 from datetime import timedelta
 
 import environ
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
 
 env = environ.Env()
 environ.Env.read_env()
@@ -108,10 +111,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 import dj_database_url
 DATABASES = {
     'default':{},
-    'mrplatoflexible': dj_database_url.config(default="postgres://eyxhzddbmjbatm:aa662a013ab6e907813288612dcf58942e57c77c5de2b849b9d4c6317bbb3a62@ec2-3-209-39-2.compute-1.amazonaws.com:5432/dcj8sla3i6j4sk",conn_max_age=600),
-    'mrplatofixed': dj_database_url.config(default="postgres://tskdvchvnavwmx:f2f37975946eca5510f9736742e1d599864c97d140c72dae7751f01a45c46a9b@ec2-34-236-7-170.compute-1.amazonaws.com:5432/dd9d91hnjb4o4d",conn_max_age=600),
+    'mrplatoflexible': dj_database_url.config(default=os.environ("HEROKU_POSTGRESQL_ONYX_URL"),conn_max_age=600),
+    'mrplatofixed': dj_database_url.config(default=os.environ("HEROKU_POSTGRESQL_COPPER_URL"),conn_max_age=600),
 }
 
+
+if "RECIPIENT_ADDRESS" in os.environ:
+    print("FAZENDO ALGUNS TESTE")
 
 
 # DATABASES = {
@@ -136,6 +142,7 @@ DATABASES = {
 # }
 
 
+print("balbalbalbaalb",os.environ("EMAIL_HOST", 'dev default value'))
 
 
 # Password validation
