@@ -97,28 +97,46 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database
+
+
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASE_URL=$(heroku config:get DATABASE_URL -a your-app) your_process
+
+
+
+import dj_database_url
 DATABASES = {
-    'default': {},
-    'mrplatofixed': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "d68muufg4lfqj5",
-        'USER': "vhzqiumgsnfsmh",
-        'PASSWORD':"57430e96d397b2aa78d7691cb83ecbf638c74b6513e2f2f5fd5594684affd53b",
-        'HOST':"ec2-52-70-45-163.compute-1.amazonaws.com",
-        # 'PORT':5432
-    },
-    
-    'mrplatoflexible': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "daupbf0ppqcea0",
-        'USER': "iielyrztqlszht",
-        'PASSWORD':"27baa9c5570faf0d5b5d9352afff8b8912e0468321127fc6bade5e9b6f778814",
-        'HOST':"ec2-52-70-45-163.compute-1.amazonaws.com",
-        # 'PORT':5432s
-    }
+    'default':{},
+    'mrplatoflexible': dj_database_url.config(default="postgres://eyxhzddbmjbatm:aa662a013ab6e907813288612dcf58942e57c77c5de2b849b9d4c6317bbb3a62@ec2-3-209-39-2.compute-1.amazonaws.com:5432/dcj8sla3i6j4sk",conn_max_age=600),
+    'mrplatofixed': dj_database_url.config(default="postgres://tskdvchvnavwmx:f2f37975946eca5510f9736742e1d599864c97d140c72dae7751f01a45c46a9b@ec2-34-236-7-170.compute-1.amazonaws.com:5432/dd9d91hnjb4o4d",conn_max_age=600),
 }
+
+
+
+# DATABASES = {
+#     # 'default': {},
+#     # 'mrplatofixed': {
+#     #     'ENGINE': 'django.db.backends.postgresql',
+#     #     'NAME': "d68muufg4lfqj5",
+#     #     'USER': "vhzqiumgsnfsmh",
+#     #     'PASSWORD':"57430e96d397b2aa78d7691cb83ecbf638c74b6513e2f2f5fd5594684affd53b",
+#     #     'HOST':"ec2-34-236-7-170.compute-1.amazonaws.com",
+#     #     # 'PORT':5432
+#     # },
+    
+#     # 'mrplatoflexible': {
+#     #     'ENGINE': 'django.db.backends.postgresql',
+#     #     'NAME': "daupbf0ppqcea0",
+#     #     'USER': "iielyrztqlszht",
+#     #     'PASSWORD':"27baa9c5570faf0d5b5d9352afff8b8912e0468321127fc6bade5e9b6f778814",
+#     #     'HOST':"ec2-52-70-45-163.compute-1.amazonaws.com",
+#     #     # 'PORT':5432s
+#     # }
+# }
+
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -148,15 +166,12 @@ USE_I18N = True
 USE_TZ = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = env("EMAIL_HOST")
-EMAIL_HOST="smtp.gmail.com"
+EMAIL_HOST = env("EMAIL_HOST")
 
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = env("EMAIL_HOST_USER") 
-EMAIL_HOST_USER="mrplatoplatform@gmail.com"
-EMAIL_HOST_PASSWORD="pahvnqwthqvckxsq"
-# EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD") 
+EMAIL_HOST_USER = env("EMAIL_HOST_USER") 
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD") 
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
