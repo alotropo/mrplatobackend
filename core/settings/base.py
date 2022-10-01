@@ -115,9 +115,6 @@ DATABASES = {
 }
 
 
-if "RECIPIENT_ADDRESS" in os.environ:
-    print("FAZENDO ALGUNS TESTE")
-
 
 # DATABASES = {
 #     # 'default': {},
