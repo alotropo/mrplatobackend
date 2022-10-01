@@ -138,7 +138,6 @@ DATABASES = {
 # }
 
 
-print("balbalbalbaalb",os.environ("EMAIL_HOST", 'dev default value'))
 
 
 # Password validation
