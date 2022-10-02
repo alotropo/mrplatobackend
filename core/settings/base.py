@@ -108,46 +108,39 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # DATABASE_URL=$(heroku config:get DATABASE_URL -a your-app) your_process
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e6f1f9d1faef5fdea9a5728aef6253d960e89d09
-DATABASES = {
-    'default':{},
-    'mrplatofixed': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "mrplatofixed",
-        'USER': "postgres",
-        'PASSWORD':"postgres",
-        'HOST':"db",
-        # 'PORT':5432
-    },
-    
-    'mrplatoflexible': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "mrplatoflexible",
-        'USER': "postgres",
-        'PASSWORD':"postgres",
-        'HOST':"db",
-        # 'PORT':5432
-    }
-}
-
-
-
-<<<<<<< HEAD
-
-
 # DATABASES = {
 #     'default':{},
-#     'mrplatoflexible': dj_database_url.config(default=env("HEROKU_POSTGRESQL_ONYX_URL"),conn_max_age=600),
-#     'mrplatofixed': dj_database_url.config(default=env("HEROKU_POSTGRESQL_COPPER_URL"),conn_max_age=600),
+#     'mrplatofixed': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': "mrplatofixed",
+#         'USER': "postgres",
+#         'PASSWORD':"postgres",
+#         'HOST':"db",
+#         # 'PORT':5432
+#     },
+    
+#     'mrplatoflexible': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': "mrplatoflexible",
+#         'USER': "postgres",
+#         'PASSWORD':"postgres",
+#         'HOST':"db",
+#         # 'PORT':5432
+#     }
 # }
 
 
 
-=======
->>>>>>> e6f1f9d1faef5fdea9a5728aef6253d960e89d09
+
+
+DATABASES = {
+    'default':{},
+    'mrplatoflexible': dj_database_url.config(default=env("HEROKU_POSTGRESQL_ONYX_URL"),conn_max_age=600),
+    'mrplatofixed': dj_database_url.config(default=env("HEROKU_POSTGRESQL_COPPER_URL"),conn_max_age=600),
+}
+
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
