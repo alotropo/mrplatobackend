@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="259.485" height="105.291" viewBox="0 0 259.485 105.291">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="268.485" height="105.291" viewBox="0 0 268.485 105.291">
   <defs>
     <clipPath id="clip-path">
-      <rect width="259.485" height="105.291" fill="none"/>
+      <rect width="268.485" height="105.291" fill="none"/>
     </clipPath>
   </defs>
   <g id="Repetição_de_grade_1" data-name="Repetição de grade 1" clip-path="url(#clip-path)">
     <g transform="translate(-49.515 116.291)">
       <path id="Caminho_1" data-name="Caminho 1" d="M49.515-25.483l.539-72.3s1.067-5.9,3.812-8.287a17.918,17.918,0,0,1,6.63-3.315l30.041-6.837s5.633-.615,8.793,1.923,3.845,8.229,3.845,8.229v18.8a2.352,2.352,0,0,1-.444,1.22c-.4.453-.048.209-1.145.591A24.493,24.493,0,0,0,92.8-80.2a28.346,28.346,0,0,0-5.632,9.221,6.252,6.252,0,0,0-.448,1.912,10.427,10.427,0,0,0-.12,1.7V-28.6s-.331,2.093-4.781,3.643S68.8-22.4,68.8-22.4s-8.9.771-13.723,0S49.515-25.483,49.515-25.483Z" fill="#6f55ff"/>
       <path id="Caminho_2" data-name="Caminho 2" d="M97.4-66.6v38a8.951,8.951,0,0,0,2.306,5.438c1.469,1.58,5.142,2.648,5.764,2.747,4.111.668,27.312-6.225,33.882-8.026s7.49-1.976,9.265-4.2c2.653-3.327,2.424-9.1,2.424-9.1l.1-29.183a12.11,12.11,0,0,0-1.227-6.72c-1.713-3-.953-3.232-5.469-5.282s-10.442,0-10.442,0L102.53-73.413a3.468,3.468,0,0,0-2.178.815,6.232,6.232,0,0,0-2.214,2.7A7.561,7.561,0,0,0,97.4-66.6Z" fill="#6f55ff"/>
-      <text id="Plato" transform="translate(161 -28)" fill="#333" font-size="66" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Plato</tspan></text>
+      <text id="Plato" transform="translate(161 -28)" fill="#333" font-size="66" font-family="Nunito"><tspan x="0" y="0">Plato</tspan></text>
     </g>
   </g>
 </svg>
