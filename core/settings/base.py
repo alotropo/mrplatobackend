@@ -108,7 +108,10 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # DATABASE_URL=$(heroku config:get DATABASE_URL -a your-app) your_process
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e6f1f9d1faef5fdea9a5728aef6253d960e89d09
 DATABASES = {
     'default':{},
     'mrplatofixed': {
@@ -132,6 +135,7 @@ DATABASES = {
 
 
 
+<<<<<<< HEAD
 
 
 # DATABASES = {
@@ -142,6 +146,8 @@ DATABASES = {
 
 
 
+=======
+>>>>>>> e6f1f9d1faef5fdea9a5728aef6253d960e89d09
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
