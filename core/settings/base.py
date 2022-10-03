@@ -125,7 +125,7 @@ DATABASES = {
         'USER': "vdtkpypmmmbtai",
         'PASSWORD':"ddcedb3358afb8adc8d067420f3369a34d92dab4cd14e7c9e1464d1a67f8b5eb",
         'HOST':"ec2-54-157-74-211.compute-1.amazonaws.com",
-        # 'PORT':5432
+        # 'PORT':54320
     }
 }
 
