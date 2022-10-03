@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # DATABASE_URL=$(heroku config:get DATABASE_URL -a your-app) your_process
 
-
+"""
 # DATABASES = {
 #     'default':{},
 #     'mrplatofixed': {
@@ -128,15 +128,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #         # 'PORT':5432
 #     }
 # }
-
+"""
 
 
 
 
 DATABASES = {
     'default':{},
-    'mrplatoflexible': dj_database_url.config(default=env("HEROKU_POSTGRESQL_ONYX_URL"),conn_max_age=600),
-    'mrplatofixed': dj_database_url.config(default=env("HEROKU_POSTGRESQL_BLUE_URL"),conn_max_age=600),
+    'mrplatoflexible': dj_database_url.config(default=env("DATABASE_URL"),conn_max_age=600),
+    'mrplatofixed': dj_database_url.config(default=env("HEROKU_POSTGRESQL_CHARCOAL_URL"),conn_max_age=600),
 }
 
 
