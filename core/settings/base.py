@@ -136,7 +136,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default':{},
     'mrplatoflexible': dj_database_url.config(default=env("HEROKU_POSTGRESQL_ONYX_URL"),conn_max_age=600),
-    'mrplatofixed': dj_database_url.config(default=env("HEROKU_POSTGRESQL_COPPER_URL"),conn_max_age=600),
+    'mrplatofixed': dj_database_url.config(default=env("HEROKU_POSTGRESQL_GRAY_URL"),conn_max_age=600),
 }
 
 
