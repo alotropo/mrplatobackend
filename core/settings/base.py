@@ -107,37 +107,37 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # DATABASE_URL=$(heroku config:get DATABASE_URL -a your-app) your_process
 
-"""
-# DATABASES = {
-#     'default':{},
-#     'mrplatofixed': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': "mrplatofixed",
-#         'USER': "postgres",
-#         'PASSWORD':"postgres",
-#         'HOST':"db",
-#         # 'PORT':5432
-#     },
-    
-#     'mrplatoflexible': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': "mrplatoflexible",
-#         'USER': "postgres",
-#         'PASSWORD':"postgres",
-#         'HOST':"db",
-#         # 'PORT':5432
-#     }
-# }
-"""
-
-
-
 
 DATABASES = {
     'default':{},
-    'mrplatoflexible': dj_database_url.config(default=env("DATABASE_URL"),conn_max_age=600),
-    'mrplatofixed': dj_database_url.config(default=env("HEROKU_POSTGRESQL_CHARCOAL_URL"),conn_max_age=600),
+    'mrplatofixed': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "d6u43dtri3vf6",
+        'USER': "fddzuzkizeqjvm",
+        'PASSWORD':"a00289968a6199c46330e7c2225a8553a86d3834f565e76b4d2ab26a7f7400fd",
+        'HOST':"ec2-52-1-17-228.compute-1.amazonaws.com",
+        # 'PORT':5432
+    },
+    
+    'mrplatoflexible': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "d2vum6pmcl7qll",
+        'USER': "vdtkpypmmmbtai",
+        'PASSWORD':"ddcedb3358afb8adc8d067420f3369a34d92dab4cd14e7c9e1464d1a67f8b5eb",
+        'HOST':"ec2-54-157-74-211.compute-1.amazonaws.com",
+        # 'PORT':5432
+    }
 }
+
+
+
+
+
+# DATABASES = {
+#     'default':{},
+#     'mrplatoflexible': dj_database_url.config(default=env("DATABASE_URL")),
+#     'mrplatofixed': dj_database_url.config(default=env("HEROKU_POSTGRESQL_COPPER_URL")),
+# }
 
 
 
