@@ -16,8 +16,8 @@ from rest_framework.viewsets import ModelViewSet
 
 from rest_framework.response import Response
 from rest_framework import status
-from exercises.serializers import ListExerciseSerializer,QuestionExerciseSerializer
-from exercises.models import ListExercise,Question
+from exercises.serializers import ListExerciseSerializer,QuestionExerciseSerializer,ListChallengeSerializer,QuestionChallengeSerializer
+from exercises.models import ListExercise,Question,ListChallenge,QuestionChallenge
 
 
 class ApiTest(APIView):
@@ -64,4 +64,14 @@ class ApiQuestionExercise(ListAPIView):
 	serializer_class = QuestionExerciseSerializer
 	def get_queryset(self):
 		query = Question.objects.filter(list=self.kwargs["id"])
+		return query
+
+class ListChallengeView(ListAPIView):
+	serializer_class = ListChallengeSerializer
+	queryset = ListChallenge.objects.using("mrplatofixed").all()
+
+class ApiChallengeQuestion(ListAPIView):
+	serializer_class = QuestionChallengeSerializer
+	def get_queryset(self):
+		query = QuestionChallenge.objects.filter(list=self.kwargs["id"])
 		return query

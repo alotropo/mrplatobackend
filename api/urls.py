@@ -3,7 +3,7 @@ from unicodedata import name
 from django.urls import path,include,re_path
 from rest_framework import routers
 
-from .views import ApiContent, ApiNotification, ApiTest, ListExerciseView,api_test,ApiQuestionExercise
+from .views import ApiContent, ApiNotification, ApiTest, ListExerciseView,api_test,ApiQuestionExercise,ListChallengeView,ApiChallengeQuestion
 
 from rest_framework.routers import SimpleRouter
 
@@ -17,6 +17,9 @@ urlpatterns = [
     path("",include(router.urls)),
     path("notification/",ApiNotification.as_view(),name="notification"),
     path("list-exercise/",ListExerciseView.as_view({"get":"list"}),name="list"),
-    re_path("list-exercise/question/(?P<id>.+)/$",ApiQuestionExercise.as_view(),name="exercise")
+    re_path("list-exercise/question/(?P<id>.+)/$",ApiQuestionExercise.as_view(),name="exercise"),
+    path("list-challenge/",ListChallengeView.as_view(),name="list-challenge"),
+    re_path("list-challenge/question/(?P<id>.+)/$",ApiChallengeQuestion.as_view(),name="challenge"),
+
     
 ]
