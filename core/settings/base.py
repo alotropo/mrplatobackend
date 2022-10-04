@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "api",
     "corsheaders",
+    # "channels",
     "ckeditor",
     #mrplatofixed,
     "exercises",
@@ -131,6 +132,30 @@ DATABASES = {
 
 
 
+# DATABASES = {
+#     'default':{},
+#     'mrplatofixed': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': "mrplatofixed",
+#         'USER': "postgres",
+#         'PASSWORD':"postgres",
+#         'HOST':"db",
+#         # 'PORT':5432
+#     },
+    
+#     'mrplatoflexible': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': "mrplatoflexible",
+#         'USER': "postgres",
+#         'PASSWORD':"postgres",
+#         'HOST':"db",
+#         # 'PORT':54320
+#     }
+# }
+
+
+
+
 
 
 # DATABASES = {
@@ -163,11 +188,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 LANGUAGE_CODE = 'pt-br'
-
 TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
-
 USE_TZ = True
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_PORT = 587
@@ -178,13 +202,7 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -258,3 +276,13 @@ CORS_ALLOWED_ORIGINS = [
     "https://questionx.herokuapp.com",
     
 ]
+
+
+# ASGI_APPLICATION = "routing.application" #routing.py will handle the ASGI
+
+
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': "channels.layers.InMemoryChannelLayer"
+#         }
+#     }

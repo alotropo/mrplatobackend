@@ -1,5 +1,6 @@
 from urllib import response
 from django.shortcuts import render
+from community.models import Ask,Answer
 from api.serializers import ContentSerializer,NotificationSerializer
 from content.models import Content
 from rest_framework.decorators import api_view
@@ -18,6 +19,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from exercises.serializers import ListExerciseSerializer,QuestionExerciseSerializer,ListChallengeSerializer,QuestionChallengeSerializer
 from exercises.models import ListExercise,Question,ListChallenge,QuestionChallenge
+from community.serializers import AskSerializer,AnswerSerializer
+
+from community.permissions import isTestOrReadOnly
 
 
 class ApiTest(APIView):
@@ -75,3 +79,21 @@ class ApiChallengeQuestion(ListAPIView):
 	def get_queryset(self):
 		query = QuestionChallenge.objects.filter(list=self.kwargs["id"])
 		return query
+
+class ApiAskView(ModelViewSet):
+	permission_classes = [isTestOrReadOnly,]
+	serializer_class = AskSerializer
+	queryset = Ask.objects.all()
+
+
+class ApiAnswerView(ModelViewSet):
+	permission_classes = [isTestOrReadOnly]
+	serializer_class = AnswerSerializer
+	
+	def get_queryset(self):
+		id = self.request.GET.get("ask")
+		queryset = Answer.objects.filter(pergunta=id)
+		return queryset
+		
+
+	
