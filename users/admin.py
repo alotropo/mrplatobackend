@@ -2,10 +2,11 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import UserAccount,RegisterStudents
+from .models import PhotoUser, UserAccount,RegisterStudents
 
 admin.site.register(UserAccount)
 admin.site.register(RegisterStudents)
+admin.site.register(PhotoUser)
 
 
 
@@ -18,3 +19,5 @@ class OutstandingTokenAdmin(token_blacklist.admin.OutstandingTokenAdmin):
 
 admin.site.unregister(token_blacklist.models.OutstandingToken)
 admin.site.register(token_blacklist.models.OutstandingToken, OutstandingTokenAdmin)
+
+

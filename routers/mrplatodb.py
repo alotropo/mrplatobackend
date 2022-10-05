@@ -41,7 +41,7 @@ class FlexibleRouter:
 
 
 class FixedRouter:
-    route_app_labels = {'exercises','notification','content'}
+    route_app_labels = {'exercises','notification','content',"games"}
 
     def db_for_read(self, model, **hints):
         """

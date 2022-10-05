@@ -32,7 +32,6 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     username = models.CharField(max_length=255)
     nickname = models.CharField(max_length=50)
-    photo = models.FileField(upload_to="user", blank=True, default="user/userimage.png")
     matriculation = models.CharField(max_length=50)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -55,3 +54,8 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
 
 class RegisterStudents(models.Model):
     archive = models.FileField(upload_to=None, max_length=255)
+
+
+class PhotoUser(models.Model):
+    user = models.ForeignKey(UserAccount,on_delete=models.CASCADE)
+    photo = models.FileField(upload_to="user", blank=True, default="user/userimage.png")

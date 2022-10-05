@@ -4,11 +4,20 @@ import json
 import re
 from rest_framework.response import Response
 from django.http import HttpResponseNotModified
-from .models import RegisterStudents,UserAccount
+from .models import RegisterStudents,UserAccount,PhotoUser
 from django.core.mail import send_mail
 from django.conf import settings
 
 from .list_email import create_list_email
+
+
+
+@receiver(post_save, sender=UserAccount)
+def my_call_photo(sender,instance,created,**kwargs):
+    if created:
+        PhotoUser.objects.create(user=instance)
+                
+
 
 @receiver(post_save, sender=RegisterStudents)
 def my_call(sender,instance,created,**kwargs):

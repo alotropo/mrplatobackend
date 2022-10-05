@@ -1,3 +1,4 @@
+from users.models import PhotoUser
 from rest_framework import serializers
 from .models import Ask,Answer,ImageContent
 from users.models import UserAccount
@@ -5,7 +6,14 @@ from users.models import UserAccount
 class AskSerializer(serializers.ModelSerializer):
 	resposta = serializers.SerializerMethodField("get_resposta")
 	name = serializers.SerializerMethodField("get_test")
+	image = serializers.SerializerMethodField("get_image")
+	
+	def get_image(self,obj):
 
+		photo = PhotoUser.objects.filter(user=obj.user.id)[0]
+		return str(photo.photo)
+
+		
 	def get_test(self,obj):
 		user = UserAccount.objects.filter(id=obj.user.id)[0]
 		return user.nickname
@@ -19,7 +27,13 @@ class AskSerializer(serializers.ModelSerializer):
 
 class AnswerSerializer(serializers.ModelSerializer):
 	username = serializers.SerializerMethodField("get_username")
+	image = serializers.SerializerMethodField("get_image")
 	
+	def get_image(self,obj):
+
+		photo = PhotoUser.objects.filter(user=obj.user.id)[0]
+		return str(photo.photo)
+
 	def get_username(self,obj):
 		return obj.user.nickname
 	class Meta:

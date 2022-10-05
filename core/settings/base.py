@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "exercises",
     "notification",
     "content",
+    "games",
     #mrplatoflexible
     'djoser',
     'rest_framework_simplejwt',

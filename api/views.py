@@ -20,6 +20,9 @@ from rest_framework import status
 from exercises.serializers import ListExerciseSerializer,QuestionExerciseSerializer,ListChallengeSerializer,QuestionChallengeSerializer
 from exercises.models import ListExercise,Question,ListChallenge,QuestionChallenge
 from community.serializers import AskSerializer,AnswerSerializer
+from games.models import QuestionGame,ListQuestionGame
+from games.serializers import ListGameSerializer,QuestionGameSerializer
+
 
 from community.permissions import isTestOrReadOnly
 
@@ -96,4 +99,17 @@ class ApiAnswerView(ModelViewSet):
 		return queryset
 		
 
-	
+
+
+class ListGameView(ListAPIView):
+	queryset = ListQuestionGame.objects.filter(availability=True)
+	serializer_class = ListGameSerializer
+
+
+class ApiQuestionGameView(ListAPIView):
+	serializer_class = QuestionGameSerializer
+
+	def get_queryset(self):
+		id = self.request.GET.get("list")
+		queryset = QuestionGame.objects.filter(list=id)
+		return queryset
