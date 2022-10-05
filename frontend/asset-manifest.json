@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f9f789a.css",
-    "main.js": "/static/js/main.ff546469.js",
+    "main.css": "/static/css/main.1ec88a00.css",
+    "main.js": "/static/js/main.03528168.js",
     "static/media/Nunito-VariableFont_wght.ttf": "/static/media/Nunito-VariableFont_wght.e832734fe3e30d1edb43.ttf",
     "static/media/game.wav": "/static/media/game.633693b8a69e9e94fe48.wav",
     "static/media/comunidade.svg": "/static/media/comunidade.62647aee672f51af8f8c60895d345ab5.svg",
@@ -35,11 +35,11 @@
     "static/media/checkedtrue.svg": "/static/media/checkedtrue.b57f1f70c9211ef8955a3cf8c7ea22fb.svg",
     "static/media/checked.svg": "/static/media/checked.83870144e9dc81e060225ef1e36e87e9.svg",
     "static/media/profile.svg": "/static/media/profile.80d25337018d8cd4d7a652ea845ec041.svg",
-    "main.5f9f789a.css.map": "/static/css/main.5f9f789a.css.map",
-    "main.ff546469.js.map": "/static/js/main.ff546469.js.map"
+    "main.1ec88a00.css.map": "/static/css/main.1ec88a00.css.map",
+    "main.03528168.js.map": "/static/js/main.03528168.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f9f789a.css",
-    "static/js/main.ff546469.js"
+    "static/css/main.1ec88a00.css",
+    "static/js/main.03528168.js"
   ]
 }
