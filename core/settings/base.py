@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "api",
     "corsheaders",
+    'storages',
     # "channels",
     "ckeditor",
     #mrplatofixed,
@@ -110,49 +111,49 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # DATABASE_URL=$(heroku config:get DATABASE_URL -a your-app) your_process
 
 
-DATABASES = {
-    'default':{},
-    'mrplatofixed': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "d5anafbuqk85l2",
-        'USER': "efinpnnqyhcdxb",
-        'PASSWORD':"90ec14368127311a2704abf279f1a837693a15406b0c003b7e8933f36bc79780",
-        'HOST':"ec2-34-235-198-25.compute-1.amazonaws.com",
-        # 'PORT':5432
-    },
-    
-    'mrplatoflexible': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "d4t3mrj2rnifmt",
-        'USER': "jaexbuacdraali",
-        'PASSWORD':"ded3c595f555c5355bab042695067e95d5c35c4d97e11b2f7a00ab7114eebadb",
-        'HOST':"ec2-34-235-198-25.compute-1.amazonaws.com",
-        # 'PORT':54320
-    }
-}
-
-
-
 # DATABASES = {
 #     'default':{},
 #     'mrplatofixed': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': "mrplatofixed",
-#         'USER': "postgres",
-#         'PASSWORD':"postgres",
-#         'HOST':"db",
+#         'NAME': "d5anafbuqk85l2",
+#         'USER': "efinpnnqyhcdxb",
+#         'PASSWORD':"90ec14368127311a2704abf279f1a837693a15406b0c003b7e8933f36bc79780",
+#         'HOST':"ec2-34-235-198-25.compute-1.amazonaws.com",
 #         # 'PORT':5432
 #     },
     
 #     'mrplatoflexible': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': "mrplatoflexible",
-#         'USER': "postgres",
-#         'PASSWORD':"postgres",
-#         'HOST':"db",
+#         'NAME': "d4t3mrj2rnifmt",
+#         'USER': "jaexbuacdraali",
+#         'PASSWORD':"ded3c595f555c5355bab042695067e95d5c35c4d97e11b2f7a00ab7114eebadb",
+#         'HOST':"ec2-34-235-198-25.compute-1.amazonaws.com",
 #         # 'PORT':54320
 #     }
 # }
+
+
+
+DATABASES = {
+    'default':{},
+    'mrplatofixed': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "mrplatofixed",
+        'USER': "postgres",
+        'PASSWORD':"postgres",
+        'HOST':"db",
+        # 'PORT':5432
+    },
+    
+    'mrplatoflexible': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "mrplatoflexible",
+        'USER': "postgres",
+        'PASSWORD':"postgres",
+        'HOST':"db",
+        # 'PORT':54320
+    }
+}
 
 
 
@@ -277,6 +278,18 @@ CORS_ALLOWED_ORIGINS = [
     "https://questionx.herokuapp.com",
     
 ]
+
+
+
+AWS_ACCESS_KEY_ID="AKIA5XODLY3JNVJ2VMU5"
+AWS_SECRET_ACCESS_KEY="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"
+AWS_STORAGE_BUCKET_NAME="mrplato"
+
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 # ASGI_APPLICATION = "routing.application" #routing.py will handle the ASGI
