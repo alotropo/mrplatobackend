@@ -1,0 +1,19 @@
+{
+  "dict": [
+    {
+      "name": "Joao Gabriel",
+      "email": "joaoo.g.barbosa@gmail.com",
+      "matricula": 123
+    },
+    {
+      "name": "Cedric",
+      "email": "cedric@ufg.br",
+      "matricula": "credic"
+    },
+    {
+      "name": "Jonatas Tomazini",
+      "email": "tomazini@discente.ufg.br",
+      "matricula": 202104981
+    }
+  ]
+}
