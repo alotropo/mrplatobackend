@@ -111,26 +111,26 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # DATABASE_URL=$(heroku config:get DATABASE_URL -a your-app) your_process
 
 
-DATABASES = {
-    'default':{},
-    'mrplatofixed': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "d5anafbuqk85l2",
-        'USER': "efinpnnqyhcdxb",
-        'PASSWORD':"90ec14368127311a2704abf279f1a837693a15406b0c003b7e8933f36bc79780",
-        'HOST':"ec2-34-235-198-25.compute-1.amazonaws.com",
-        # 'PORT':5432
-    },
+# DATABASES = {
+#     'default':{},
+#     'mrplatofixed': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': "d5anafbuqk85l2",
+#         'USER': "efinpnnqyhcdxb",
+#         'PASSWORD':"90ec14368127311a2704abf279f1a837693a15406b0c003b7e8933f36bc79780",
+#         'HOST':"ec2-34-235-198-25.compute-1.amazonaws.com",
+#         # 'PORT':5432
+#     },
     
-    'mrplatoflexible': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "d4t3mrj2rnifmt",
-        'USER': "jaexbuacdraali",
-        'PASSWORD':"ded3c595f555c5355bab042695067e95d5c35c4d97e11b2f7a00ab7114eebadb",
-        'HOST':"ec2-34-235-198-25.compute-1.amazonaws.com",
-        # 'PORT':54320
-    }
-}
+#     'mrplatoflexible': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': "d4t3mrj2rnifmt",
+#         'USER': "jaexbuacdraali",
+#         'PASSWORD':"ded3c595f555c5355bab042695067e95d5c35c4d97e11b2f7a00ab7114eebadb",
+#         'HOST':"ec2-34-235-198-25.compute-1.amazonaws.com",
+#         # 'PORT':54320
+#     }
+# }
 
 
 
@@ -154,6 +154,27 @@ DATABASES = {
 #         # 'PORT':54320
 #     }
 # }
+
+DATABASES = {
+    'default':{},
+    'mrplatofixed': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "mrplatofixed",
+        'USER': "postgres",
+        'PASSWORD':"123",
+        'HOST':"localhost",
+        'PORT':5432
+    },
+    
+    'mrplatoflexible': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "mrplatoflexible",
+        'USER': "postgres",
+        'PASSWORD':"123",
+        'HOST':"localhost",
+        'PORT':5432
+    }
+}
 
 
 
@@ -195,11 +216,14 @@ USE_I18N = True
 USE_TZ = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = env("EMAIL_HOST")
+# EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_HOST = "mrplatoplatform@gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = env("EMAIL_HOST_USER") 
-EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD") 
+EMAIL_HOST_USER = "mrplato" 
+# EMAIL_HOST_USER = env("EMAIL_HOST_USER") 
+EMAIL_HOST_PASSWORD = "azsxdcfvgbG!" 
+# EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD") 
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
