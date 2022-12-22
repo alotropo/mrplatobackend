@@ -11,16 +11,16 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings.base')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
 
 django_application = get_asgi_application()
 
+from core import routing  # noqa isort:skip
 
 from channels.routing import ProtocolTypeRouter, URLRouter 
 application = ProtocolTypeRouter(
     {
         "http": get_asgi_application(),
+        "websocket": URLRouter(routing.websocket_urlpatterns),
     }
 )
-
-
