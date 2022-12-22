@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     "users",
     "community",
     "performance",
+    "channels",
     
 ]
 
@@ -316,11 +317,9 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
-# ASGI_APPLICATION = "routing.application" #routing.py will handle the ASGI
-
-
-# CHANNEL_LAYERS = {
-#     'default': {
-#         'BACKEND': "channels.layers.InMemoryChannelLayer"
-#         }
-#     }
+ASGI_APPLICATION = "core.asgi.application"#routing.py will handle the ASGI
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': "channels.layers.InMemoryChannelLayer"
+        }
+    }
