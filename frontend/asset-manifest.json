@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.c388d9bf.css",
-    "main.js": "/static/js/main.8ca97d0c.js",
+    "main.css": "/static/css/main.cab7fe5c.css",
+    "main.js": "/static/js/main.5d1a272a.js",
     "static/media/Nunito-VariableFont_wght.ttf": "/static/media/Nunito-VariableFont_wght.e832734fe3e30d1edb43.ttf",
+    "static/media/test2.webp": "/static/media/test2.5b391101f9febdfd454f.webp",
     "static/media/game.wav": "/static/media/game.633693b8a69e9e94fe48.wav",
     "static/media/comunidade.svg": "/static/media/comunidade.62647aee672f51af8f8c60895d345ab5.svg",
     "static/media/logo.png": "/static/media/logo.811c419998f859a298cd.png",
     "static/media/istockphoto-1369249687-612x612.jpg": "/static/media/istockphoto-1369249687-612x612.13531598904cfe58ea66.jpg",
+    "static/media/test.jpg": "/static/media/test.811a86cba3b23746c5ed.jpg",
     "static/media/desafio.svg": "/static/media/desafio.36f5020eb4ad6d0ab8453f807ad80646.svg",
     "static/media/exercicio.svg": "/static/media/exercicio.49da1033270e8f47e6889e2304c0dcbf.svg",
     "static/media/templatehome.svg": "/static/media/templatehome.abad5405851127fba9cd.svg",
@@ -16,6 +18,7 @@
     "static/media/dine.svg": "/static/media/dine.bcbe503cd350727a48be.svg",
     "static/media/games.svg": "/static/media/games.d633ddf171f023b27fdcbb4dad4d4a7c.svg",
     "static/media/JerseyM54-aLX9.ttf": "/static/media/JerseyM54-aLX9.b9b9f8b7b36075c930f8.ttf",
+    "static/media/users.svg": "/static/media/users.9ba2c663b35e35781395389ed4f5d242.svg",
     "static/media/trofeu.svg": "/static/media/trofeu.85c7bdb48e56dacdfed36e9457c77e82.svg",
     "static/media/logosimplific.svg": "/static/media/logosimplific.695ae35104666eadc032fb89731a2cfe.svg",
     "static/media/settings.svg": "/static/media/settings.e8b3581af99df1346f2f54aba9fa64ad.svg",
@@ -35,11 +38,11 @@
     "static/media/checkedtrue.svg": "/static/media/checkedtrue.b57f1f70c9211ef8955a3cf8c7ea22fb.svg",
     "static/media/checked.svg": "/static/media/checked.83870144e9dc81e060225ef1e36e87e9.svg",
     "static/media/profile.svg": "/static/media/profile.80d25337018d8cd4d7a652ea845ec041.svg",
-    "main.c388d9bf.css.map": "/static/css/main.c388d9bf.css.map",
-    "main.8ca97d0c.js.map": "/static/js/main.8ca97d0c.js.map"
+    "main.cab7fe5c.css.map": "/static/css/main.cab7fe5c.css.map",
+    "main.5d1a272a.js.map": "/static/js/main.5d1a272a.js.map"
   },
   "entrypoints": [
-    "static/css/main.c388d9bf.css",
-    "static/js/main.8ca97d0c.js"
+    "static/css/main.cab7fe5c.css",
+    "static/js/main.5d1a272a.js"
   ]
 }

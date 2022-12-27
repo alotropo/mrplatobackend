@@ -23,6 +23,9 @@ from community.serializers import AskSerializer,AnswerSerializer
 from games.models import QuestionGame,ListQuestionGame
 from games.serializers import ListGameSerializer,QuestionGameSerializer
 
+from tournamment.serializers import GroupSerializer,MemberSerializer
+from tournamment.models import Members,Group
+
 
 from community.permissions import isTestOrReadOnly
 
@@ -113,3 +116,13 @@ class ApiQuestionGameView(ListAPIView):
 		id = self.request.GET.get("list")
 		queryset = QuestionGame.objects.filter(list=id)
 		return queryset
+
+
+class TournammentGroup(ModelViewSet):
+	serializer_class = GroupSerializer
+	queryset =  Group.objects.all()
+
+
+class TournammentMember(ModelViewSet):
+	serializer_class = MemberSerializer
+	queryset =  Members.objects.all()
