@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     "community",
     "performance",
     "channels",
-    
+    "tournamment",    
 ]
 
 MIDDLEWARE = [

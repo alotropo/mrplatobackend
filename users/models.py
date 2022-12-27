@@ -35,6 +35,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     matriculation = models.CharField(max_length=50)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    online = models.BooleanField(default=False)
 
     objects = UserAccountManager()
 
@@ -49,6 +50,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     
     def __str__(self):
         return self.email
+
 
 
 

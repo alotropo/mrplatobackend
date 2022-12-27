@@ -15,12 +15,15 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
 
 django_application = get_asgi_application()
 
-from core import routing  # noqa isort:skip
+
+from tournamment.middleware import TokenAuthMiddleware
 
 from channels.routing import ProtocolTypeRouter, URLRouter 
+from core import routing  # noqa isort:skip
+
 application = ProtocolTypeRouter(
     {
         "http": get_asgi_application(),
-        "websocket": URLRouter(routing.websocket_urlpatterns),
+        "websocket": TokenAuthMiddleware(URLRouter(routing.websocket_urlpatterns)),
     }
 )

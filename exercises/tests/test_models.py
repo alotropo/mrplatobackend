@@ -11,6 +11,5 @@ class TestModel:
         query = Question.objects.all()
         return list(query.values_list("text", flat=True))
 
-    def test_model(self,create_question):
-        assert [create_question.text] == self.get_question()
+
         
