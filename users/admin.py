@@ -1,13 +1,42 @@
 from django.contrib import admin
 
 # Register your models here.
-
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import PhotoUser, UserAccount,RegisterStudents
 
-admin.site.register(UserAccount)
+# admin.site.register(UserAccount)
 admin.site.register(RegisterStudents)
 admin.site.register(PhotoUser)
 
+
+class UserAdmin(BaseUserAdmin):
+    list_display = ("username", "email", "is_staff")
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("username","email", "password1", "password2"),
+            },
+        ),
+    )
+
+    fieldsets = (
+        (None, {'fields': ('username', 'email','password')}),
+
+        ('Permissions', {'fields': ('is_staff',)}),
+    )
+    
+
+    list_filter = ("is_staff", "is_superuser", "is_active", "groups")
+    search_fields = ("username", "first_name", "last_name", "email")
+    ordering = ("username",)
+    filter_horizontal = (
+        "groups",
+        "user_permissions",
+    )
+# Re-register UserAdmin
+admin.site.register(UserAccount, UserAdmin)
 
 
 from rest_framework_simplejwt import token_blacklist

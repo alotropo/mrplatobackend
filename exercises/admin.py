@@ -13,3 +13,10 @@ admin.site.register(Question)
 @admin.register(ListExercise)
 class SimulateAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug":("list_name",)}
+
+
+class TestAdmin(admin.AdminSite):
+    site_header = "teste"
+
+
+admin.AdminSite.site_header = "Mrplato admin"
