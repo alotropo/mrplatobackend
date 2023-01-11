@@ -32,6 +32,9 @@ class Question(models.Model):
     data_created = models.DateField(auto_now=True)
     resolution = models.TextField()
 
+    class Meta:
+        verbose_name_plural = "Question exercices"
+
 
     def __str__(self) -> str:
         return self.result
@@ -68,3 +71,32 @@ class QuestionChallenge(models.Model):
 
 
 
+
+
+
+class ListTournamment(models.Model):
+    list_name = models.CharField(max_length=50)
+    category = models.CharField(max_length=50)
+    availability = models.BooleanField(default=False)
+    slug = models.SlugField()
+
+    def __str__(self) -> str:
+        return self.list_name
+    
+
+    class Meta:
+        ordering = ('-availability', )
+
+
+    
+class QuestionTounamment(models.Model):
+    list = models.ForeignKey(ListTournamment, on_delete=models.CASCADE)
+    category = models.CharField(max_length=50)
+    text = models.TextField()
+    result = models.TextField()
+    data_created = models.DateField(auto_now=True)
+    resolution = models.TextField()
+
+
+    def __str__(self) -> str:
+        return self.result

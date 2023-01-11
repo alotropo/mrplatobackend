@@ -16,7 +16,11 @@ class GroupSerializer(ModelSerializer):
         
 class MemberSerializer(ModelSerializer):
     username = serializers.SerializerMethodField("get_name")
+    email = serializers.SerializerMethodField("get_email")
 
+
+    def get_email(self,obj):
+        return obj.user.email
 
     def get_name(self,obj):
         return obj.user.username

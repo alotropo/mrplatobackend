@@ -7,6 +7,10 @@ from tournamment.models import Group,Members
 from tournamment.serializers import GroupSerializer,MemberSerializer
 from users.serializers import UserCreateSerializer
 
+from exercises.models import ListTournamment,QuestionTounamment
+from exercises.serializers import ListTournammentSerializer,QuestionTournammentSerializer
+
+
 class ChatConsumer(JsonWebsocketConsumer):
     """
     This consumer is used to show user's online status,
@@ -18,6 +22,8 @@ class ChatConsumer(JsonWebsocketConsumer):
         self.room_name = None
         self.user = None
         self.numembers = 0
+
+
 
 
     def set_user_online(self,id):
@@ -71,6 +77,9 @@ class ChatConsumer(JsonWebsocketConsumer):
 
         groups = Group.objects.all()
         serializer = GroupSerializer(groups,many=True)
+
+
+
 
         self.send_json(
             {
@@ -158,6 +167,8 @@ class ChatConsumer(JsonWebsocketConsumer):
         self.send_json(event)
 
 
+from users.models import Score
+
 class GroupTournamment(JsonWebsocketConsumer):
     """
     This consumer is used to show user's online status,
@@ -178,6 +189,14 @@ class GroupTournamment(JsonWebsocketConsumer):
             user.online = True
             user.save()
 
+
+    def get_question(self):
+        lista  = ListTournamment.objects.filter(availability=True)
+        if lista.__len__() == 1:
+            questions = QuestionTounamment.objects.filter(list=lista[0])
+            serializer = QuestionTournammentSerializer(questions, many=True)
+            return serializer.data
+
     def set_user_offine(self,id):
         user = UserAccount.objects.filter(id=id)
         for user in user:
@@ -188,6 +207,11 @@ class GroupTournamment(JsonWebsocketConsumer):
         user_filter_online = Members.objects.filter(online=True,group=self.group[0])
         serializer = MemberSerializer(user_filter_online,many=True)
         return serializer.data
+
+    def get_question_checked(self):
+        score = Score.objects.filter(type="tournamment",user_score=self.user,acert=True)
+        lista_id = [ x.question_id for x in score ]
+        return lista_id
 
 
     def connect(self):
@@ -220,6 +244,20 @@ class GroupTournamment(JsonWebsocketConsumer):
             "type":"groupInformation",
             "data":groups[0].name
         })
+
+        self.send_json({
+            "type":"get_question",
+            "questions": self.get_question()
+        })
+
+        
+
+        self.send_json({
+            "type":"get_question_checked",
+            "questions_checked": self.get_question_checked()
+        })
+
+
 
         async_to_sync(self.channel_layer.group_add)(
         self.room_name,
@@ -294,6 +332,22 @@ class GroupTournamment(JsonWebsocketConsumer):
 
                 },
             )            
+
+        if content["type"] == "question_checked":
+
+            score = Score.objects.filter(type="tournamment",user_score=self.user,acert=True)
+            print("SADhbsdahbsda",score)
+            lista_id = [ x.question_id for x in score ]
+
+
+            async_to_sync(self.channel_layer.group_send)(
+                self.room_name,
+                {
+                    "type": "refresh_question_checked",
+                    "questions_checked": self.get_question_checked()
+                },
+            )
+
         if content["type"] == "refreshUserOnline":
 
                 async_to_sync(self.channel_layer.group_send)(
@@ -316,6 +370,9 @@ class GroupTournamment(JsonWebsocketConsumer):
 
 
         return super().receive_json(content, **kwargs)
+
+    def refresh_question_checked(self,event):
+        self.send_json(event)
 
     def refreshUserOnline(self,event):
         self.send_json(event)

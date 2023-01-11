@@ -123,6 +123,17 @@ class TournammentGroup(ModelViewSet):
 	queryset =  Group.objects.all()
 
 
+from users.utils import score
+
 class TournammentMember(ModelViewSet):
 	serializer_class = MemberSerializer
 	queryset =  Members.objects.all()
+
+	def get_queryset(self):
+		score(type="exercises",question_id=2, user=self.request.user,time=0,attempet=0)
+		score(type="exercises",question_id=1, user=self.request.user,time=0,attempet=0)
+		score(type="challenges",question_id=2, user=self.request.user,time=0,attempet=0)
+		score(type="tournamment",question_id=2, user=self.request.user,time=0,attempet=0)
+		score(type="games",question_id=2, user=self.request.user,time=0,attempet=0)
+		return super().get_queryset()
+	
