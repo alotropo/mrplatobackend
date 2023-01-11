@@ -1,6 +1,6 @@
 from dataclasses import fields
 from rest_framework import serializers
-from .models import ListExercise, Question,ListChallenge,QuestionChallenge
+from .models import ListExercise, Question,ListChallenge,QuestionChallenge,QuestionTounamment,ListTournamment
 
 class ListExerciseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,4 +22,17 @@ class ListChallengeSerializer(serializers.ModelSerializer):
 class QuestionChallengeSerializer(serializers.ModelSerializer):
     class Meta:
         model = QuestionChallenge
+        fields = "__all__"
+
+
+
+class ListTournammentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ListTournamment
+        fields = "__all__"
+
+
+class QuestionTournammentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = QuestionTounamment
         fields = "__all__"

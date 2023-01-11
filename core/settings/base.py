@@ -60,13 +60,13 @@ INSTALLED_APPS = [
     "notification",
     "content",
     "games",
+    "config",
     #mrplatoflexible
     'djoser',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     "users",
     "community",
-    "performance",
     "channels",
     "tournamment",    
 ]

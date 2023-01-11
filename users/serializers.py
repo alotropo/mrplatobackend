@@ -16,10 +16,10 @@ class UserCreateSerializer(UserCreateSerializer):
 
     class Meta(UserCreateSerializer.Meta):
         model = User
-        fields = ('id', 'email', 'username', 'password','photo',"matriculation",'nickname')
+        fields = ('id', 'email', 'username', 'password','photo',"matriculation",'nickname',"score_user")
 
 
 class UserSerializerView(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("photo","username","id","nickname","matriculation")
+        fields = ("photo","username","id","nickname","matriculation","score_user")

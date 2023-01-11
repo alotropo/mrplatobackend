@@ -3,7 +3,9 @@ from django.db import models
 
 from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin,BaseUserManager
 
+from exercises.models import Question,QuestionChallenge,QuestionTounamment
 
+from games.models import QuestionGame
 
 class UserAccountManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -27,6 +29,8 @@ class UserAccountManager(BaseUserManager):
           return self.create_user(email, password, **extra_fields)
 
 
+
+
 class UserAccount(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     username = models.CharField(max_length=255)
@@ -35,6 +39,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     online = models.BooleanField(default=False)
+    score_user = models.FloatField(default=0)
 
     objects = UserAccountManager()
 
@@ -51,6 +56,18 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
+
+class Score(models.Model):
+    type = models.CharField(max_length=50)
+    question_id = models.IntegerField()
+    user_score = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
+    acert = models.BooleanField(default=False)
+    tried = models.BooleanField(default=False)
+    data = models.JSONField(null=True,blank=True)
+
+
+    def __str__(self) -> str:
+        return f"{self.type} - {self.question_id}"
 
 
 class RegisterStudents(models.Model):

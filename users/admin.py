@@ -10,7 +10,7 @@ admin.site.register(PhotoUser)
 
 
 class UserAdmin(BaseUserAdmin):
-    list_display = ("username", "email", "is_staff")
+    list_display = ("username", "email","matriculation","score_user")
     add_fieldsets = (
         (
             None,
@@ -23,12 +23,14 @@ class UserAdmin(BaseUserAdmin):
 
     fieldsets = (
         (None, {'fields': ('username', 'email','password')}),
+        ('Permissions', {'fields': ('score_user',)}),
 
-        ('Permissions', {'fields': ('is_staff',)}),
+
     )
     
+    
 
-    list_filter = ("is_staff", "is_superuser", "is_active", "groups")
+    list_filter = ("matriculation", "score_user", "email")
     search_fields = ("username", "first_name", "last_name", "email")
     ordering = ("username",)
     filter_horizontal = (
@@ -49,4 +51,5 @@ class OutstandingTokenAdmin(token_blacklist.admin.OutstandingTokenAdmin):
 admin.site.unregister(token_blacklist.models.OutstandingToken)
 admin.site.register(token_blacklist.models.OutstandingToken, OutstandingTokenAdmin)
 
-
+from .models import Score
+admin.site.register(Score)
